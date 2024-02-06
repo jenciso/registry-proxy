@@ -30,6 +30,7 @@ jobs:
     - name: Push image
       run: |
         IMAGE_TAG=${GITHUB_SHA::7}
+        echo "Pushing image: jenciso/registry-proxy:$IMAGE_TAG"
         docker tag jenciso/registry-proxy:$IMAGE_TAG jenciso/registry-proxy:latest
         docker push jenciso/registry-proxy:$IMAGE_TAG
         docker push jenciso/registry-proxy:latest
